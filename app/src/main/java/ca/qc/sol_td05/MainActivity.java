@@ -16,12 +16,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("Tag TD05", "Hello World !");
+        //Log.d("Tag TD05", "Hello World !");
         ContactDAO dao = new ContactDAO(this);
-        List<Contact> contacts = dao.getAllContacts();
-        for (Contact c:
-             contacts) {
-            Log.d("Tag TD05", c.toString());
-        }
+        Contact newContact = new Contact();
+        newContact.setName("Sarah Danielle Proulx");
+        newContact.setPhoneNumber("514-282-1872");
+
+        Contact contact = dao.addContact(newContact);
+        if(contact != null)
+            Log.d("Tag TD05", contact.toString());
+
+//        List<Contact> contacts = dao.getAllContacts();
+//        for (Contact c:
+//             contacts) {
+//            Log.d("Tag TD05", c.toString());
+//        }
     }
 }

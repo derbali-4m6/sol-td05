@@ -18,18 +18,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Log.d("Tag TD05", "Hello World !");
         ContactDAO dao = new ContactDAO(this);
-        Contact newContact = new Contact();
-        newContact.setName("Sarah Danielle Proulx");
-        newContact.setPhoneNumber("514-282-1872");
+//        Contact newContact = new Contact();
+//        newContact.setName("Sarah Danielle Bedard");
+//        newContact.setPhoneNumber("514-000-1872");
 
-        Contact contact = dao.addContact(newContact);
-        if(contact != null)
-            Log.d("Tag TD05", contact.toString());
-
-//        List<Contact> contacts = dao.getAllContacts();
-//        for (Contact c:
-//             contacts) {
-//            Log.d("Tag TD05", c.toString());
+//        Contact contact = dao.deleteContactByID(3);
+//        if(contact != null)
+//            Log.d("Tag TD05", contact.toString());
+//        else{
+//            Log.d("Tag TD05", "attention une erreur est survenue");
 //        }
+
+        List<Contact> contacts = dao.getAllContacts();
+        for (Contact c:
+             contacts) {
+            Log.d("Tag TD05", c.toString());
+        }
     }
 }
